@@ -45,13 +45,20 @@ namespace GeneticsLab
             int score;                                                       // place your computed alignment score here
             string[] alignment = new string[2];                              // place your two computed alignments here
 
-
-            // ********* these are placeholder assignments that you'll replace with your code  *******
+            // ***************************************************************************************
             score = 0;                                                
             alignment[0] = "";
             alignment[1] = "";
             // ***************************************************************************************
-            
+
+            if (banded)
+            {
+                bandedAlignmentAlgorithm(ref score, ref alignment, ref sequenceA, ref sequenceB);
+            }
+            else
+            {
+                unrestrictedAlignmentAlgorithm(ref score, ref alignment, ref sequenceA, ref sequenceB); 
+            }
 
             result.Update(score,alignment[0],alignment[1]);                  // bundling your results into the right object type 
             return(result);
