@@ -4,21 +4,32 @@ using System.Text;
 
 namespace GeneticsLab
 {
+    enum directions { LEFT, TOP, RIGHT};
     class PairWiseAlign
     {
         int MaxCharactersToAlign;
+        int distance;
 
         public PairWiseAlign()
         {
             // Default is to align only 5000 characters in each sequence.
             this.MaxCharactersToAlign = 5000;
+            this.distance = 3;
         }
 
         public PairWiseAlign(int len)
         {
             // Alternatively, we can use an different length; typically used with the banded option checked.
             this.MaxCharactersToAlign = len;
+            this.distance = 3;
         }
+
+        public int getMaxCharactersToAlign()
+        {
+            return this.MaxCharactersToAlign;
+        }
+
+
 
         /// <summary>
         /// this is the function you implement.
@@ -44,6 +55,48 @@ namespace GeneticsLab
 
             result.Update(score,alignment[0],alignment[1]);                  // bundling your results into the right object type 
             return(result);
+        }
+
+        private void fillStartCells(ref int[,] values, ref directions[,] previous, int lengthA, int lengthB, bool banded)
+        {
+            for(int col = 0; col < lengthB+1; col++)
+            {
+                if (banded && (col > distance)) break;
+
+                values[0, col] = col * 5;
+                previous[0, col] = directions.LEFT;
+            }
+
+            for(int row = 0; row < lengthA+1; row++)
+            {
+                if (banded && (row > distance)) break;
+
+                values[row, 0] = row * 5;
+                previous[row, 0] = directions.TOP;
+            }
+        }
+
+        private void createAlignments(ref string[] alignment, ref directions[,] previous, ref GeneSequence geneSequenceA, ref GeneSequence geneSequenceB, ref int lengthOfA, ref int lengthOfB)
+        {
+
+        }
+
+        // ********************************************************************************************
+        // ************************** Unrestricted Alignment Algorithm ********************************
+        // ********************************************************************************************
+
+        private void unrestrictedAlignmentAlgorithm(ref int score, ref string[] alignment, ref GeneSequence geneSequenceA, ref GeneSequence geneSequenceB)
+        {
+
+        }
+
+        // ********************************************************************************************
+        // ****************************** Banded Alignment Algorithm **********************************
+        // ********************************************************************************************
+
+        private void bandedAlignmentAlgorithm(ref int score, ref string[] alignment, ref GeneSequence geneSequenceA, ref GeneSequence geneSequenceB)
+        {
+
         }
     }
 }
