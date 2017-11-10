@@ -51,13 +51,13 @@ namespace GeneticsLab
             alignment[1] = "";
             // ***************************************************************************************
 
-            if (banded)
+            if (!banded)
             {
-                bandedAlignmentAlgorithm(ref score, ref alignment, ref sequenceA, ref sequenceB);
+                unrestrictedAlignmentAlgorithm(ref score, ref alignment, ref sequenceA, ref sequenceB);
             }
             else
             {
-                unrestrictedAlignmentAlgorithm(ref score, ref alignment, ref sequenceA, ref sequenceB); 
+                bandedAlignmentAlgorithm(ref score, ref alignment, ref sequenceA, ref sequenceB);
             }
 
             result.Update(score,alignment[0],alignment[1]);                  // bundling your results into the right object type 
@@ -137,9 +137,12 @@ namespace GeneticsLab
                 {
                     int costOfTopDelete = values[row - 1, col] + 5;
                     int costOfLeftInsert = values[row, col - 1] + 5;
-                    int costOfDiagonal = 1;
-                    if (geneSequenceA.Sequence[row - 1] == geneSequenceB.Sequence[col - 1]) costOfDiagonal = -3;
+                    int costOfDiagonalMove = 1;
+                    if (geneSequenceA.Sequence[row - 1] == geneSequenceB.Sequence[col - 1]) costOfDiagonalMove = -3;
+                    int costOfDiagonal = values[row - 1, col - 1] + costOfDiagonalMove;
                     int minCost = Math.Min(costOfTopDelete, Math.Min(costOfLeftInsert, costOfDiagonal));
+
+                    values[row, col] = minCost;
 
                     if(minCost == costOfDiagonal)
                     {
