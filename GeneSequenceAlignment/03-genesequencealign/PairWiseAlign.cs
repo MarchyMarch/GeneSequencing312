@@ -64,6 +64,16 @@ namespace GeneticsLab
             return(result);
         }
 
+        /// <summary>
+        /// This method fills the rows with the start values associated with starting the Needleman/Wunsch algorithm.
+        /// Time Complexity is O(n+m), it iterates through both sequences, a and b, and which is associated with n and m.
+        /// Space Complexity is O(1), because it only modifies already allocated space.
+        /// </summary>
+        /// <param name="values">The values of each cell</param>
+        /// <param name="previous">A list of previous directions that for each cell</param>
+        /// <param name="lengthA">The length of gene sequence A</param>
+        /// <param name="lengthB">The length of gene sequence B</param>
+        /// <param name="banded">Tells if the banded box is checked</param>
         private void fillStartCells(ref int[,] values, ref directions[,] previous, int lengthA, int lengthB, bool banded)
         {
             for(int col = 0; col < lengthB+1; col++)
@@ -85,9 +95,9 @@ namespace GeneticsLab
 
         /// <summary>
         /// This method itertorates through the two gene sequences and finds the correct alignments
-        /// The Time Complexity of this method is O(n+m) because it will itorate through until the final sequence is
-        ///             of size n + m
-        /// The Space Complexity of this method is O(1) because it only modifies previously allocated space
+        /// The Time Complexity of this method is O(n) because it will iterate through the biggest gene sequence of size n
+        /// The Space Complexity of this method is O(n) because a string of the same length of the longest gene sequence is
+        ///     allocated
         /// </summary>
         /// <param name="alignment">An array of strings that is the optimal alignments of the two sequences</param>
         /// <param name="previous">An array that holds the previous square/acts as the guiding arrow</param>
@@ -136,8 +146,10 @@ namespace GeneticsLab
 
         /// <summary>
         /// This is the unrestricted algorithm. It tries to find the optimal alignment in the given DNA sequences
-        /// The Time Complexity of this method is O(nm)
-        /// THe Space Complexity of this method is O(nm)
+        /// The Time Complexity of this method is O(nm), n and m are the lengths of the two gene sequences.  It is 
+        ///     nm because it iterates through both sequences.
+        /// The Space Complexity of this method is O(nm), n and m are the lengths of the two gene sequences.  It is
+        ///     nm because it makes a two demensional array of size n by m.
         /// </summary>
         /// <param name="score">The score of the cell for the given sequence</param>
         /// <param name="alignment">A string array of the optimal alignment of the two sequences</param>
@@ -191,8 +203,10 @@ namespace GeneticsLab
 
         /// <summary>
         /// This is the banded alignment algorithm.
-        /// The time complexity of the algorithm is O(n+m)
-        /// The Space Complexity is O(nm)
+        /// The time complexity of the algorithm is O(n+m), where n and m are the sizes of the two gene sequences.  It is n + m
+        ///     because it only iterates over a certain amount of cells.
+        /// The Space Complexity is O(nm), n and m are the lengths of the two gene sequences.  It is
+        ///     nm because it makes a two demensional array of size n by m.
         /// </summary>
         /// <param name="score">The score that is to be passed back to fill the cell</param>
         /// <param name="alignment">A string array that holds the two aligned strings or states there is no alignment</param>
