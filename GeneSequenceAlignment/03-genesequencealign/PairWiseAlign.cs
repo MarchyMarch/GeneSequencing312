@@ -83,6 +83,18 @@ namespace GeneticsLab
             }
         }
 
+        /// <summary>
+        /// This method itertorates through the two gene sequences and finds the correct alignments
+        /// The Time Complexity of this method is O(n+m) because it will itorate through until the final sequence is
+        ///             of size n + m
+        /// The Space Complexity of this method is O(1) because it only modifies previously allocated space
+        /// </summary>
+        /// <param name="alignment">An array of strings that is the optimal alignments of the two sequences</param>
+        /// <param name="previous">An array that holds the previous square/acts as the guiding arrow</param>
+        /// <param name="geneSequenceA">The first DNA sequence</param>
+        /// <param name="geneSequenceB"> The second DNA sequence</param>
+        /// <param name="lengthOfA">the length of geneSequenceA</param>
+        /// <param name="lengthOfB">the length of geneSequenceB</param>
         private void createAlignments(ref string[] alignment, ref directions[,] previous, ref GeneSequence geneSequenceA, ref GeneSequence geneSequenceB, ref int lengthOfA, ref int lengthOfB)
         {
             int rowIterator = lengthOfA;
@@ -121,6 +133,16 @@ namespace GeneticsLab
         // ********************************************************************************************
         // ************************** Unrestricted Alignment Algorithm ********************************
         // ********************************************************************************************
+
+        /// <summary>
+        /// This is the unrestricted algorithm. It tries to find the optimal alignment in the given DNA sequences
+        /// The Time Complexity of this method is O(nm)
+        /// THe Space Complexity of this method is O(nm)
+        /// </summary>
+        /// <param name="score">The score of the cell for the given sequence</param>
+        /// <param name="alignment">A string array of the optimal alignment of the two sequences</param>
+        /// <param name="geneSequenceA">The first given DNA sequence</param>
+        /// <param name="geneSequenceB">The second DNA sequence given</param>
 
         private void unrestrictedAlignmentAlgorithm(ref int score, ref string[] alignment, ref GeneSequence geneSequenceA, ref GeneSequence geneSequenceB)
         {
@@ -166,6 +188,16 @@ namespace GeneticsLab
         // ********************************************************************************************
         // ****************************** Banded Alignment Algorithm **********************************
         // ********************************************************************************************
+
+        /// <summary>
+        /// This is the banded alignment algorithm.
+        /// The time complexity of the algorithm is O(n+m)
+        /// The Space Complexity is O(nm)
+        /// </summary>
+        /// <param name="score">The score that is to be passed back to fill the cell</param>
+        /// <param name="alignment">A string array that holds the two aligned strings or states there is no alignment</param>
+        /// <param name="geneSequenceA">The first DNA sequence that is given</param>
+        /// <param name="geneSequenceB"> The second DNA sequence that is given</param>
 
         private void bandedAlignmentAlgorithm(ref int score, ref string[] alignment, ref GeneSequence geneSequenceA, ref GeneSequence geneSequenceB)
         {
