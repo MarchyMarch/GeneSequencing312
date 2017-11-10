@@ -11,3 +11,16 @@ C:\Users\Kyle March\Documents\School\Fall 2017\CS 312\Projects\04\GeneSequencing
 C:\Users\Kyle March\Documents\School\Fall 2017\CS 312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.application
 C:\Users\Kyle March\Documents\School\Fall 2017\CS 312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.exe
 C:\Users\Kyle March\Documents\School\Fall 2017\CS 312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.pdb
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\bin\Release\GeneticsLab.exe.manifest
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\bin\Release\GeneticsLab.application
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\bin\Release\GeneticsLab.exe
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\bin\Release\GeneticsLab.pdb
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.csprojResolveAssemblyReference.cache
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.MainForm.resources
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.Properties.Resources.resources
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.csproj.GenerateResource.Cache
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.csproj.CoreCompileInputs.cache
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.exe.manifest
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.application
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.exe
+D:\Documents\School\Fall 2017\CS312\Projects\04\GeneSequencing312\GeneSequenceAlignment\03-genesequencealign\obj\Release\GeneticsLab.pdb
